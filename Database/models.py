@@ -9,15 +9,18 @@ Base = declarative_base()
 class COMPANIES(Base):
     __tablename__ = 'companies'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    company_name = Column(String, nullable=True) #Column won't be null
+    company_name = Column(String, nullable=False) #Column won't be null
+
 
 
 """Model for location file"""
 class LOCATION(Base):
     __tablename__ = 'locations'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    location = Column(String, nullable=True)
-    location_type = Column(String, nullable=True)
+    location = Column(String, nullable=False)
+    location_type = Column(String, nullable=False)
+
+
 
 """Model for legal file"""
 class LEGAL(Base):
