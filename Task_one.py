@@ -17,6 +17,8 @@ class Namecomponents():
 
         """Splitting the raw input into 3 segments and strippping certain characters away from the segments"""
         split_comp_name = comp_name.split(' ') # items in split comp_names
+
+        #Try block to deal with situations where there less than 3 items in the comp_name string
         try:
             segments = [ split_comp_name[0].strip("    ,.(){}[]#@''    "),
                          split_comp_name[1].strip("    ,.(){}[]#@''    "),
@@ -47,8 +49,8 @@ class Namecomponents():
 
         return self.components
 
-compa_names = [ "Cognism (Germany) Ldt.", "Cognism Limited United Kingdom" , "Cognism"]
-for compa_name in compa_names:
+company_names = ["Cognism (Germany) Ldt.", "Cognism Limited United Kingdom" , "Cognism"]
+for company_name in company_names:
     print(
-        Namecomponents().get_name_components(compa_name)
+        Namecomponents().get_name_components(company_name)
     )
