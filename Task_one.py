@@ -1,4 +1,4 @@
-from Database.models import Base, COMPANIES, LOCATION, LEGAL
+from Database.models import COMPANIES, LOCATION, LEGAL
 from Database.database import engine
 from sqlalchemy.orm import sessionmaker
 
@@ -8,6 +8,7 @@ s = Session()
 
 
 class Namecomponents():
+    """Class that returns that returns name components of the various companies"""
     def __init__(self):
         self.components = {} #Dictionary to hold the results
 
@@ -46,8 +47,8 @@ class Namecomponents():
 
         return self.components
 
-compa_name = "Cognism"
-z= Namecomponents().get_name_components(compa_name)
-print(
-    z
-)
+compa_names = [ "Cognism (Germany) Ldt.", "Cognism Limited United Kingdom" , "Cognism"]
+for compa_name in compa_names:
+    print(
+        Namecomponents().get_name_components(compa_name)
+    )
