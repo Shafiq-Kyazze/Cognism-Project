@@ -1,0 +1,50 @@
+sqlite3 cognism_db.sqlite3   #open the newly created sqlite database in ubuntu terminal
+
+
+
+
+"""Companies table"""
+#Creating a temporary table for the companies table
+CREATE TABLE IF NOT EXISTS companies_temp(
+company_name TEXT NOT NULL);
+
+#Inserting data in companies_temp table
+.mode column
+.import cognism_test_data/companies.txt
+
+#Copying data from companies_temp table to companies table
+INSERT INTO companies(company_name) SELECT * FROM companies_temp;
+
+
+
+
+
+"""Locations table"""
+#Creating a temporary table for the locations table
+CREATE TABLE IF NOT EXISTS locations_temp(
+location TEXT NOT NULL,
+location_type TEXT NOT NULL);
+
+#Inserting data in locations_temp table
+.mode tab
+.import cognism_test_data/location.tsv locations_temp
+
+#Copying data from legal_temp table to legal table
+INSERT INTO locations(location, location_type) SELECT * FROM locations_temp;
+
+
+
+
+
+
+"""Legal table"""
+#Creating a temporary table for the legal table
+CREATE TABLE IF NOT EXISTS legal_temp(
+legal_term TEXT NOT NULL);
+
+#Inserting data in legal_temp table
+.mode column
+.import cognism_test_data/legal.txt legal_temp
+
+#Copying data from legal_temp table to legal table
+INSERT INTO legal(legal_term) SELECT * FROM legal_temp;
