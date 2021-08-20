@@ -20,9 +20,9 @@ class Namecomponents():
 
         #Try block to deal with situations where there less than 3 items in the comp_name string
         try:
-            segments = [ split_comp_name[0].strip("    ,.(){}[]#@''    "),
+            segments = [ split_comp_name[0].strip("    ,.(){}[]#@''    "),   #Strip  the following from the input string
                          split_comp_name[1].strip("    ,.(){}[]#@''    "),
-                         ' '.join(split_comp_name[2:]).strip("    ,.(){}[]#@''    ") ] #Used -1 instead of 2 because of spaced strings such as united kingdom , united states etcetra
+                         ' '.join(split_comp_name[2:]).strip("    ,.(){}[]#@''    ") ] #To work on spaced strings such as united kingdom , united states etcetra
         except IndexError: #If there are less than 3 items in the segments list
             segments = [
                 part.strip("    ,.(){}[]#@''    ") for part in split_comp_name
