@@ -26,4 +26,4 @@ class LOCATION(Base):
 class LEGAL(Base):
     __tablename__ = 'legal'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    legal_term = Column(String, nullable=False)
+    legal_identifier = Column(String, nullable=False)
