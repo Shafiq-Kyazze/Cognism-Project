@@ -1,4 +1,4 @@
-sqlite3 cognism_db.sqlite3   #open the newly created sqlite database in ubuntu terminal
+sqlite3 cognism_db.sqlite3   #open the newly created sqlite database in Ubuntu's terminal
 
 
 
