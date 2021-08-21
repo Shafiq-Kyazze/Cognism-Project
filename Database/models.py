@@ -7,9 +7,9 @@ Base = declarative_base()
 
 """ Data Model for companies file"""
 class COMPANIES(Base):
-    __tablename__ = 'companies'
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    company_name = Column(String, nullable=False) #Column won't be null
+    __tablename__ = 'companies'     #Table name
+    id = Column(Integer, primary_key=True, autoincrement=True)   #Table column called Id
+    company_name = Column(String, nullable=False) #Column called company_namE. column won't be null
 
 
 
